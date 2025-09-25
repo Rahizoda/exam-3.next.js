@@ -4,7 +4,7 @@ import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-between items-center p-[20px]'>
+    <nav className='flex fixed top-0 bg-accent w-full dark:bg-black opacity-85  justify-between items-center p-[20px]'>
       <div className='flex items-center justify-center gap-3'>
       <img alt="" className="ytCoreImageHost rounded-[50%] w-[70px] yt-spec-avatar-shape__image ytCoreImageFillParentHeight ytCoreImageFillParentWidth ytCoreImageContentModeScaleToFill ytCoreImageLoaded" src="https://yt3.googleusercontent.com/LpHa_hOEw1anos7wppFAF_WCAh4BUOIinCB5QKSgWgtghjbJdZcjQHzAx2lnx2o77PIz9R9MtQ=s160-c-k-c0x00ffffff-no-rj"></img>
       <h1 className='text-2xl font-serif'>Intelect</h1>
