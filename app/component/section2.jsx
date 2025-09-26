@@ -22,18 +22,18 @@ const Section2 = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 1000, // 5 секунд на каждый слайд (можешь увеличить)
+          delay: 1000,
           disableOnInteraction: false,
-          waitForTransition: true, // ждём пока завершится анимация перед переключением
+          waitForTransition: true,
         }}
         pagination={{ clickable: true }}
-        speed={1500} // скорость перехода между слайдами (1.5 секунды)
+        speed={1500}
         loop={true}
         modules={[Autoplay, Pagination, ]}
         className="mySwiper3"
       >
         <SwiperSlide>
-          <div className='border border-[#4e4c4ca8]  shadow-lg rounded-2xl p-[20px] '>
+          <div className=' rounded-2xl p-[20px] '>
             <h1 className='text-[40px] text-blue-600 font-bold'>Personal Lessons</h1> <br />
             <div className='flex justify-around items-center' >
               <div>
@@ -54,7 +54,7 @@ const Section2 = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='border border-[#4e4c4ca8]  shadow-lg rounded-2xl p-[20px] '>
+          <div className=' rounded-2xl p-[20px] '>
             <h1 className='text-[40px] font-bold text-blue-600'>Group Courses</h1> <br />
             <div className='flex justify-around items-center' >
               <div>
@@ -74,7 +74,7 @@ const Section2 = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='border border-[#4e4c4ca8]  shadow-lg rounded-2xl p-[20px] '>
+          <div className=' rounded-2xl p-[20px] '>
 
             <h1 className='text-[40px] font-bold text-blue-600'>Corporate Program</h1> <br />
             <div className='flex justify-around items-center' >

@@ -16,6 +16,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import TeachersSlider from './teacher';
 import LessonCard from './card';
 import Section2 from './section2';
+import Section3 from './section3';
 
 
 
@@ -285,7 +286,8 @@ const LanguageLanding = () => {
         </div>
         <LessonCard/>
       </section>
-
+      
+      <Section3/>
     </div>
   );
 };
