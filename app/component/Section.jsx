@@ -1,8 +1,21 @@
 // components/LanguageLanding.js
-
+"use client";
+import React, { useRef, useState } from 'react';
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
 import Image from 'next/image';
 import EastIcon from '@mui/icons-material/East';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import TeachersSlider from './teacher';
+
+
 
 const languages = [
   {
@@ -49,6 +62,10 @@ const languages = [
 ];
 
 const LanguageLanding = () => {
+
+
+
+
   return (
     <div className="bg-accent dark:bg-black">
 
@@ -61,27 +78,34 @@ const LanguageLanding = () => {
 
 
         <div className="flex justify-around items-center">
-          <div>
+          <div className='flex flex-col w-[340px]'>
             <h3 className='text-2xl text-start'>
               Choose from a variety of <br />
               languages, including English, <br />
               Spanish, French, German, <br />
               and many more.
-            </h3>
-            <button></button>
+            </h3> <br />
+            <button className="group flex items-center justify-start w-11 h-11 bg-blue-600  rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-[65%] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
+              <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
+                <EastIcon sx={{ color: "white" }} />
+              </div>
+              <div className="absolute  right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                Choose The Course
+              </div>
+            </button>
           </div>
           <img className='w-[450px] h-[600px]' decoding="async" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-layer-1.webp" alt="hp4-layer-1"></img>
           <section className=" p-10">
             <div className="max-w-5xl mx-auto flex flex-col  justify-around items-center text-center gap-6">
-              <div className='flex border rounded-2xl items-center gap-4'>
+              <div className='flex border-b p-[5px] rounded-2xl items-center gap-4'>
                 <h2 className="text-[75px] font-bold text-blue-600">80+</h2>
                 <p className="text-gray-600 text-3xl">Language <br /> Courses</p>
               </div>
-              <div className='flex border rounded-2xl items-center gap-4'>
+              <div className='flex border-b p-[5px] rounded-2xl  items-center gap-4'>
                 <h2 className="text-[75px] font-bold text-blue-600">95%</h2>
                 <p className="text-gray-600 text-3xl">Satisfaction <br /> Rate</p>
               </div>
-              <div className='flex border rounded-2xl items-center gap-4'>
+              <div className='flex border-b  p-[5px] rounded-2xl items-center gap-4'>
                 <h2 className="text-[75px] font-bold text-blue-600">1mil</h2>
                 <p className="text-gray-600 text-3xl">Lessons <br />Completed</p>
               </div>
@@ -115,7 +139,7 @@ const LanguageLanding = () => {
            `}
             >
               {/* Flag */}
-              <div className="w-12 h-12 rounded-[50%] mb-4">
+              <div className="  mb-4">
                 <Image
                   src={lang.flag}
                   alt={lang.title}
@@ -124,21 +148,21 @@ const LanguageLanding = () => {
                   className="object-cover h-[50px] w-[55px] rounded-[50%] "
                 />
               </div>
-                <br /><br /><br />
+              <br /><br /><br />
               {/* Title */}
               <h3 className="text-3xl font-semibold mb-1 ">
                 {lang.title}
               </h3>
-                <br />
+              <br />
               {/* Description */}
               <p className="text-[20px] w-[280px] text-gray-600 group-hover:text-white ">
                 {lang.description}
               </p>
-                <br />
+              <br />
               {/* Button */}
-              <button className="group flex items-center justify-start w-11 h-11 bg-white  rounded-full cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg group-hover:w-[65%] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
+              <button className="group flex items-center justify-start w-11 h-11 bg-white  rounded-[10px] cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg group-hover:w-[65%] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
                 <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
-                  <EastIcon sx={{color:"blue", }} />
+                  <EastIcon sx={{ color: "blue", }} />
                 </div>
                 <div className="absolute  right-5 transform translate-x-full opacity-0 text-blue-600 text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
                   Read More
@@ -147,6 +171,113 @@ const LanguageLanding = () => {
 
             </div>
           ))}
+        </div>
+      </section>
+
+
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 1000, // 5 секунд на каждый слайд (можешь увеличить)
+          disableOnInteraction: false,
+          waitForTransition: true, // ждём пока завершится анимация перед переключением
+        }}
+        pagination={{ clickable: true }}
+        modules={[Autoplay, Pagination, Navigation]}
+        speed={1500} // скорость перехода между слайдами (1.5 секунды)
+        loop={true}
+        className="mySwiper"
+        style={{ maxWidth: '900px', padding: "50px 100px" }}
+      >
+        <SwiperSlide>
+          <img decoding="async" className="main_image" alt="3" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/3.webp"></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img decoding="async" className="main_image" alt="2" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/2.webp"></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img decoding="async" className="main_image" alt="1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/1.webp"></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img decoding="async" className="main_image" alt="6" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/6.webp"></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img decoding="async" className="main_image" alt="5" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/5.webp"></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img decoding="async" className="main_image" alt="4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/4.webp"></img>
+        </SwiperSlide>
+      </Swiper>
+      <hr />
+
+      <section>
+        <div className='flex justify-between p-[40px] items-end font-bold '>
+          <div>
+            <p className='text-blue-600'> benefits of our courses</p>
+            <h1 className='text-4xl'>Learn, Practice, Perfect with <br /> Professionals</h1>
+          </div>
+          <button className="group flex items-center justify-start w-11 h-11 bg-blue-600  rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-[250px] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
+            <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
+              <EastIcon sx={{ color: "white" }} />
+            </div>
+            <div className="absolute  right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+              Wiev all Courses
+            </div>
+          </button>
+        </div>
+
+        <div className='flex justify-between p-[30px] items-center '>
+          <div className='font-bold flex flex-col gap-[20px] w-[500px]'>
+
+            <div className='p-[10px] w-full '>
+              <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>01</span> Interactive Learning</h3>
+              <p className='text-xl text-gray-600'>Engage with experienced instructors in real-time.</p>
+            </div>
+            <hr />
+            <div className='p-[10px] w-full '>
+              <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>02</span> Personalized Approach</h3>
+              <p className='text-xl text-gray-600'> Tailored to your goals, pace, and proficiency level.</p>
+              <hr />
+            </div>
+            <div className='p-[10px] w-full '>
+                <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>03</span>Flexibility and Accessibility</h3>
+                <p className='text-xl text-gray-600'>Accessible from any device, no matter where you are.</p>
+              </div>
+              <hr />
+            <div className='p-[10px] w-full '>
+                <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>04</span> Certifications and Recognition</h3>
+                <p className='text-xl text-gray-600'>Earn globally recognized credentials upon course.</p>
+              </div>
+              <hr />
+          </div>
+
+          <div className="w-[600px] bg-div rounded-3xl  bg-cover bg-center h-screen">
+            {/* <img className='w-[600px] rounded-3xl' loading="lazy" decoding="async" width="1340" height="1020" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4.webp"  alt="" srcset="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4.webp 1340w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-300x228.webp 300w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-1024x779.webp 1024w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-768x585.webp 768w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-1080x822.webp 1080w" sizes="(max-width: 1340px) 100vw, 1340px"></img> */}
+             <h1 className='text-[360px]  mb-[-80px] font-bold text-white'>b2</h1>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section className='pb-[800px] dark:bg-black m-[100px_0px] bg-gradient-to-r from-[#556886] to-[#05132b]  h-screen text-white'>
+        <div className='flex justify-between p-[40px] items-end font-bold '>
+          <div >
+            <p className=' text-lg'> our teachers</p>
+            <h1 className='text-6xl'>Master the Language <br /> with Expert Tutors</h1>
+          </div>
+          <button className="group flex items-center justify-start w-11 h-11 bg-blue-600  rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-[250px] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
+            <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
+              <EastIcon sx={{ color: "white" }} />
+            </div>
+            <div className="absolute  right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+              Wiev all Courses
+            </div>
+          </button>
+        </div>
+        <div className='pb-[300px]'>
+        <TeachersSlider/>
         </div>
       </section>
 

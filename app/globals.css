@@ -3,6 +3,76 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+/* Контейнер Swiper */
+.mySwiper {
+  width: 100%;
+  max-width: 700px;
+  height: 250px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Кождый слайд */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 200px;
+  margin: auto;
+  border-radius: 15px;
+  padding: 50px;
+  padding-left: 100px;
+  margin-right: 0px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image .imga {
+  width: 280px;
+  height: 100%;
+  border-radius: 5%;
+}
+/* Картинка в центре слайда */
+.swiper-slide img {
+   max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: auto;
+
+}
+
+.mySwipe2{
+  width: 1150px;
+ display: flex;
+ justify-content: space-between;
+ gap: 10px;
+ align-items: center;
+ padding: 10px;
+}
+
+.mySwipe2 .mySwipe2-swiper-slide{
+  width: 350px;
+  height: 400px;
+
+}
+
+
+
+
+.bg-div{
+  background-image: url('https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4.webp');
+  height: 500px;
+  display: flex ;
+  justify-self: unset;
+  justify-content: start;
+  align-items: end;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
