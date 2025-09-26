@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import TeachersSlider from './teacher';
+import LessonCard from './card';
 
 
 
@@ -67,7 +68,7 @@ const LanguageLanding = () => {
 
 
   return (
-    <div className="bg-accent dark:bg-black">
+    <div className="bg-accent pt-[50px] dark:bg-black">
 
       {/* Header / Hero */}
       <section className="text-center py-16 px-4">
@@ -279,6 +280,7 @@ const LanguageLanding = () => {
         <div className='pb-[300px]'>
         <TeachersSlider/>
         </div>
+        <LessonCard/>
       </section>
 
     </div>
