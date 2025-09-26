@@ -71,7 +71,7 @@ const LanguageLanding = () => {
 
 
   return (
-    <div className="bg-accent pt-[50px] dark:bg-black">
+    <div className="bg-accent pt-[50px] dark:bg-[#06062b]">
 
       {/* Header / Hero */}
       <section className="text-center py-16 px-4">
