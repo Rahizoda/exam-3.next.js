@@ -2,6 +2,7 @@
 
 import React from 'react'
 import EastIcon from '@mui/icons-material/East';
+import { Button } from '@mui/material';
 const courses = [
   {
     language: "English",
@@ -85,6 +86,7 @@ const courses = [
   },
 
 ];
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 
 
 
@@ -112,7 +114,7 @@ const Section3 = () => {
         {courses.map((course, index) => (
           <div key={index} className='min-w-[300px]' style={{ borderRadius: "10px", padding: "15px", fontFamily: "sans-serif" }}>
             <img src={course.image} alt={course.title} style={{ width: "100%", borderRadius: "10%", marginBottom: "10px" }} />
-            <div className=' h-[250px] hover:scale-110 duration-500 bg-white border  p-[20px] rounded-2xl relative bottom-[100px]'>
+            <div className=' h-[250px] hover:scale-110 duration-500 bg-white dark:bg-[#0e0e33] border  p-[20px] rounded-2xl relative bottom-[100px]'>
             <span className='font-bold hover:bg-blue-600 hover:text-white duration-500 cursor-pointer w-[150px] mb-[10px] text-blue-600 rounded-2xl p-[5px] bg-[#dbd6d6]'>{course.language}</span>
             <h3 className='text-[18px] font-bold pb-[10px] hover:text-blue-600 cursor-pointer'>{course.title}</h3>
               <p className='pb-[10px] text-[13px] text-gray-500'> By {course.instructor}</p>
@@ -120,9 +122,10 @@ const Section3 = () => {
             <p className='text-blue-600 font-bold'>{course.price}</p>
             <p>{course.booked} Booked</p>
             </div> <hr className='mt-[10px] p-[10px]'/>
-            <button style={{ backgroundColor: "#0078d4", color: "white", border: "none", padding: "8px 12px", borderRadius: "5px" }}>
-              Add to Cart
-            </button>
+            <Button variant='contained' fullWidth className='hover:!bg-accent hover:!text-blue-600'>
+                <LocalGroceryStoreOutlinedIcon/>
+                Add to Cart
+            </Button >
            </div>
           </div>
         ))}

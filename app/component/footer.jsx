@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* Courses */}
-        <div>
+        <div className="flex flex-col gap-[20px]">
           <h3 className="font-semibold text-lg mb-4">Courses</h3>
           <ul className="space-y-2">
             <li>English Courses</li>
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         {/* Contacts */}
-        <div>
+        <div className="flex - flex-col gap-[10px]">
           <h3 className="font-semibold text-lg mb-4">Contacts</h3>
           <p>27 Division St, New York,</p>
           <p>NY 10002, USA</p>
@@ -35,17 +35,17 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Your email"
-              className="px-3 py-2 rounded-l-md text-black focus:outline-none w-full"
+              className="px-3 py-2 border border-white rounded-l-md focus:outline-none w-full"
             />
             <button
               type="submit"
-              className="bg-blue-600 px-4 py-2 rounded-r-md hover:bg-blue-700 flex items-center justify-center"
+              className="bg-blue-600 px-4 h-[42px] py-2 rounded-r-md hover:bg-blue-700 flex items-center justify-center"
             >
               <Email fontSize="small" />
             </button>
           </form>
           {/* Success message */}
-          
+
           <p>Subscribe to our newsletter.</p>
           <p>Be in trends.</p>
         </div>
