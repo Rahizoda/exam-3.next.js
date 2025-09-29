@@ -1,8 +1,12 @@
+"use client"
+
 import React from 'react'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+  const router = useRouter();
   return (
     <nav className='flex z-40 fixed top-0  w-full dark:bg-[#06062b] bg-[white]  justify-between items-center p-[20px]'>
       <div className='flex items-center justify-center gap-3'>
@@ -10,10 +14,10 @@ const Navbar = () => {
       <h1 className='text-2xl font-serif'>Intelect</h1>
       </div>
       <div className='flex justify-center items-center gap-[40px] font-bold text-2xl'>
-        <a href="">Home</a>
-        <a href="">Courses</a>
-        <a href="">Aboute Us</a>
-        <a href="">Contact</a>
+        <a className='cursor-pointer' onClick={() => router.push("/")}>Home</a>
+        <a className='cursor-pointer' onClick={() => router.push("/courses")}>Courses</a>
+        <a className='cursor-pointer' onClick={() => router.push("/aboute")}>Aboute Us</a>
+        <a className='cursor-pointer' onClick={() => router.push("/contact")}>Contact</a>
       </div>
       <div className='flex gap-5 items-center justify-center'>
         <div>

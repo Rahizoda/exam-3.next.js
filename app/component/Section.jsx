@@ -209,6 +209,11 @@ const LanguageLanding = () => {
       </Swiper>
       <hr />
 
+      <div>
+
+        <video src=""></video>
+      </div>
+
 
       {/*  Language Cards */}
       <section className="  px-4">
@@ -288,19 +293,19 @@ const LanguageLanding = () => {
         <LessonCard/>
       </section>
 
-      <div style={{ scrollbarColor:"transparent transparent"}} className='flex overflow-auto w-[95%] m-auto p-[50px_0px] gap-5'>
-        <img className='min-w-[300px] min-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
-        <img className='min-w-[600px] min-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
-        <img className='min-w-[300px] min-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
-        <img className='min-w-[600px] min-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
-        <img className='min-w-[300px] min-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
-        <img className='min-w-[600px] min-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
-        <img className='min-w-[300px] min-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
-        <img className='min-w-[600px] min-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
-        <img className='min-w-[300px] min-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
-        <img className='min-w-[600px] min-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
-        <img className='min-w-[300px] min-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
-        <img className='min-w-[600px] min-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
+      <div style={{ scrollbarColor:"transparent transparent"}} className='flex overflow-auto w-[95%] h-[400px] m-auto p-[50px_0px] gap-5'>
+        <img className='max-w-[300px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
+        <img className='max-w-[600px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
+        <img className='max-w-[300px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
+        <img className='max-w-[600px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
+        <img className='max-w-[300px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
+        <img className='max-w-[600px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
+        <img className='max-w-[300px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
+        <img className='max-w-[600px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
+        <img className='max-w-[300px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
+        <img className='max-w-[600px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
+        <img className='max-w-[300px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
+        <img className='max-w-[600px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
       </div>
 
       <Section3 />
