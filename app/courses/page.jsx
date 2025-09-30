@@ -95,9 +95,9 @@ const courses = [
 const page = () => {
   const router = useRouter()
   return (
-    <div className='pt-[100px]'>
+    <div className='pt-[100px] bg-accent dark:bg-[#050524]'>
 
-      <div className='flex flex-col bg-[#caebfd] justify-center  p-[50px_0px] items-center gap-10'>
+      <div className='flex flex-col bg-[#caebfd] dark:bg-[#080831] justify-center  p-[50px_0px] items-center gap-10'>
         <h1 className='text-blue-700 text-[70px] font-extrabold' >Courses</h1>
         <p ><span onClick={() => router.push("/")} className='cursor-pointer hover:underline'>Home  </span>  <EastIcon /> <span className='cursor-pointer underline'>Courses</span></p>
       </div>
@@ -108,12 +108,12 @@ const page = () => {
           <p className='text-blue-600'> our courses</p>
           <h1 className='text-4xl'>Learn, Practice, Perfect with <br /> Professionals</h1>
         </div>
-        
+
       </div>
 
 
 
-      <div  className=' w-[95%] m-auto   flex flex-wrap justify-start items-start   '>
+      <div  className=' w-[95%] m-auto    flex flex-wrap justify-start items-start   '>
         {courses.map((course, index) => (
           <div key={index} className='w-[400px] h-[500px] ' style={{ borderRadius: "10px", padding: "15px", fontFamily: "sans-serif" }}>
             <img src={course.image} alt={course.title} style={{ width: "100%", borderRadius: "10%", marginBottom: "10px" }} />
