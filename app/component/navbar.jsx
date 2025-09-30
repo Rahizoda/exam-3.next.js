@@ -4,6 +4,7 @@ import React from 'react'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
 import { useRouter } from 'next/navigation';
+import SelectSmall from './select';
 
 const Navbar = () => {
   const router = useRouter();
@@ -16,15 +17,16 @@ const Navbar = () => {
       <div className='flex justify-center items-center gap-[40px] font-bold text-2xl'>
         <a className='cursor-pointer' onClick={() => router.push("/")}>Home</a>
         <a className='cursor-pointer' onClick={() => router.push("/courses")}>Courses</a>
-        <a className='cursor-pointer' onClick={() => router.push("/aboute")}>Aboute Us</a>
+        <a className='cursor-pointer' onClick={() => router.push("/about")}>Aboute Us</a>
         <a className='cursor-pointer' onClick={() => router.push("/contact")}>Contact</a>
       </div>
       <div className='flex gap-5 items-center justify-center'>
         <div>
         <input className="w-64 px-4  py-2 border-b border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder='Search...'  type="text" name="" id="" />
         </div>
-         <AnimatedThemeToggler />
-         <ShoppingBagOutlinedIcon sx={{fontSize:"40px", fontFamily:"inherit"}}/>
+        <AnimatedThemeToggler />
+
+       <SelectSmall/>
       </div>
     </nav>
   )

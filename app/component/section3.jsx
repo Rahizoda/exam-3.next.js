@@ -87,10 +87,12 @@ const courses = [
 
 ];
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
+import { useRouter } from 'next/navigation';
 
 
 
 const Section3 = () => {
+  const router = useRouter()
   return (
     <div>
       <div className='flex justify-between p-[40px] items-end font-bold '>
@@ -98,7 +100,7 @@ const Section3 = () => {
           <p className='text-blue-600'> benefits of our courses</p>
           <h1 className='text-4xl'>Learn, Practice, Perfect with <br /> Professionals</h1>
         </div>
-        <button className="group flex items-center justify-start w-11 h-11 bg-blue-600  rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-[250px] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
+        <button onClick={()=> router.push("/courses")} className="group flex items-center justify-start w-11 h-11 bg-blue-600  rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-[250px] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
           <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
             <EastIcon sx={{ color: "white" }} />
           </div>
