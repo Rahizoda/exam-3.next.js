@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import "../component/styles.css"
 
 // import required modules
 import { Autoplay, Pagination, Navigation, FreeMode, Scrollbar } from 'swiper/modules';
@@ -19,6 +20,33 @@ import Section2 from './section2';
 import Section3 from './section3';
 const languagess = ['+ German', '+ Spanish', '+ Italian', '+ German']
 
+const images = [
+  {
+    image:'/image copy 2.png',
+    title: 'Speak Fluently, Connect Globally',
+    text:'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
+  },
+  {
+    image:'/image copy 3.png',
+    title: 'Speak Fluently, Connect Globally',
+    text:'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
+  },
+  {
+    image:'/image copy 4.png',
+    title: 'Speak Fluently, Connect Globally',
+    text:'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
+  },
+  {
+    image:'/image copy.png',
+    title: 'Speak Fluently, Connect Globally',
+    text:'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
+  },
+  {
+    image:'/image.png',
+    title: 'Speak Fluently, Connect Globally',
+    text:'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
+  }
+]
 
 
 const languages = [
@@ -72,6 +100,69 @@ const LanguageLanding = () => {
 
   return (
     <div className="bg-accent pt-[50px] dark:bg-[#06062b]">
+      <div className='mt-[-50px]'>
+
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 3000, // 3 сония барои ҳар як слайд
+            disableOnInteraction: false,
+            waitForTransition: true,
+          }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination,]}
+          speed={800}
+          loop={true}
+          className="mySwiper22 "
+          style={{
+            maxWidth: '95%',
+            padding: "50px 20px",
+            marginTop:"100px",
+            borderRadius: '20px',
+          }}
+        >
+          {images.map((item, index) => (
+            <SwiperSlide className='w-[95%] m-auto bg-accent dark:bg-[#0f0f49]' key={index}>
+              <div className="flex items-center rounded-2xl bg-accent dark:bg-[#0d0d42] justify-between min-h-[full] p-12 bg-gradient-to-br  relative">
+                {/* Content Section */}
+                <div className="flex-1 max-w-lg text-blue-600 z-10">
+                  <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6 text-shadow-lg">
+                    {item.title}
+                  </h1>
+
+                  <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-8 opacity-90 text-shadow">
+                    {item.text}
+                  </p>
+
+                  <button className="bg-white text-blue-600 border-none px-10 py-4 text-lg font-bold rounded-full cursor-pointer shadow-lg hover:bg-gray-50 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                    Read More
+                  </button>
+                </div>
+
+                {/* Image Section */}
+                <div className=" w-[500px] bg-accent dark:bg-[#0f0f49]  h-[400px] z-10">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-[100%] img11 h-[100%] rounded-2xl shadow-2xl border-4 border-white border-opacity-20"
+                  />
+                </div>
+
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-radial-at-30-50 from-white from-opacity-10 to-transparent to-50% z-0"></div>
+              </div>
+            </SwiperSlide>
+          ))}
+
+        </Swiper>
+
+
+      </div>
 
       {/* Header / Hero */}
       <section className="text-center py-16 px-4">
@@ -120,10 +211,10 @@ const LanguageLanding = () => {
 
       </section>
 
-      <div className='flex flex-col md:flex-row justify-around items-center '>
+      <div className='flex flex-col md:flex-row justify-around text-center items-center '>
 
         <div className='border  border-gray-800 rounded-2xl p-[30px] w-[300px] h-[450px] transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-blue-500 hover:bg-blue-50 cursor-pointer'>
-          <svg className='w-[70px] h-[70px] transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512"><path d="M62,58.1843V48.8157A2.9926,2.9926,0,0,0,61,43H55.8157A2.9635,2.9635,0,0,0,56,42a2.995,2.995,0,0,0-2-2.8157V37h3.1807L55.4316,26.5084A3.4776,3.4776,0,0,0,54,20.6632V16.3105l-2.6039-.9919L59.6924,12,32,.9229,4.3076,12,16,16.6771V29H12A7.9913,7.9913,0,0,0,7.3386,43.4884,10.4993,10.4993,0,0,0,10.5,64H61a2.9926,2.9926,0,0,0,1-5.8157ZM60,51H42v2H60v5H10.3228a4.5,4.5,0,0,1,0-9H60ZM52,39H12a2,2,0,0,1,0-4H23.9755A30.1154,30.1154,0,0,0,32,36a30.1148,30.1148,0,0,0,8.0245-1h9.1283l-.3335,2H52Zm-4.551-8H49.82l-.3334,2H44.8613A12.1476,12.1476,0,0,0,47.449,31Zm7.37,4H51.1807L52.44,27.4434a2.8,2.8,0,0,0,1.12,0ZM54.5,24A1.5,1.5,0,1,1,53,22.5,1.5017,1.5017,0,0,1,54.5,24ZM52,17.69v2.9737a3.4776,3.4776,0,0,0-1.4316,5.8452L50.153,29H48V16.6771l.6548-.262ZM32,3.0771,54.3076,12l-5.67,2.2679L32.356,8.0654l-.712,1.8692,14.2527,5.43L32,20.9229,9.6924,12Zm0,20,14-5.6v12.144C45.104,30.55,41.1553,34,32,34c-9.165,0-13.1123-3.458-14-4.3779V17.4771ZM6,37a6.0066,6.0066,0,0,1,6-6h4.551a12.1476,12.1476,0,0,0,2.5877,2H12a4,4,0,0,0,0,8H53a1,1,0,0,1,0,2H12A6.0066,6.0066,0,0,1,6,37ZM61,62H10.5a8.5,8.5,0,0,1,0-17H61a1,1,0,0,1,0,2H10.3228a6.5,6.5,0,0,0,0,13H61a1,1,0,0,1,0,2Z"></path><rect x="10" y="54" width="28" height="2"></rect></svg>
+          <svg className='w-[70px] m-auto h-[70px] transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512"><path d="M62,58.1843V48.8157A2.9926,2.9926,0,0,0,61,43H55.8157A2.9635,2.9635,0,0,0,56,42a2.995,2.995,0,0,0-2-2.8157V37h3.1807L55.4316,26.5084A3.4776,3.4776,0,0,0,54,20.6632V16.3105l-2.6039-.9919L59.6924,12,32,.9229,4.3076,12,16,16.6771V29H12A7.9913,7.9913,0,0,0,7.3386,43.4884,10.4993,10.4993,0,0,0,10.5,64H61a2.9926,2.9926,0,0,0,1-5.8157ZM60,51H42v2H60v5H10.3228a4.5,4.5,0,0,1,0-9H60ZM52,39H12a2,2,0,0,1,0-4H23.9755A30.1154,30.1154,0,0,0,32,36a30.1148,30.1148,0,0,0,8.0245-1h9.1283l-.3335,2H52Zm-4.551-8H49.82l-.3334,2H44.8613A12.1476,12.1476,0,0,0,47.449,31Zm7.37,4H51.1807L52.44,27.4434a2.8,2.8,0,0,0,1.12,0ZM54.5,24A1.5,1.5,0,1,1,53,22.5,1.5017,1.5017,0,0,1,54.5,24ZM52,17.69v2.9737a3.4776,3.4776,0,0,0-1.4316,5.8452L50.153,29H48V16.6771l.6548-.262ZM32,3.0771,54.3076,12l-5.67,2.2679L32.356,8.0654l-.712,1.8692,14.2527,5.43L32,20.9229,9.6924,12Zm0,20,14-5.6v12.144C45.104,30.55,41.1553,34,32,34c-9.165,0-13.1123-3.458-14-4.3779V17.4771ZM6,37a6.0066,6.0066,0,0,1,6-6h4.551a12.1476,12.1476,0,0,0,2.5877,2H12a4,4,0,0,0,0,8H53a1,1,0,0,1,0,2H12A6.0066,6.0066,0,0,1,6,37ZM61,62H10.5a8.5,8.5,0,0,1,0-17H61a1,1,0,0,1,0,2H10.3228a6.5,6.5,0,0,0,0,13H61a1,1,0,0,1,0,2Z"></path><rect x="10" y="54" width="28" height="2"></rect></svg>
           <br />
           <h2 className='text-3xl transition-all duration-300 group-hover:text-blue-700'>Online & Offline <br /> Options</h2>
           <br />
@@ -144,7 +235,7 @@ const LanguageLanding = () => {
         </div>
 
         <div className='border border-gray-800 rounded-2xl p-[30px] w-[300px] h-[450px] transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-blue-500 hover:bg-blue-50 cursor-pointer'>
-          <svg className='w-[70px] h-[70px] transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 64 64" width="512"><path d="m31 23h2v2h-2z"></path><path d="m31 51h2v2h-2z"></path><path d="m24 24.876h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -9.589 15.968)"></path><path d="m38 49.124h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -19.838 26.217)"></path><path d="m18.876 30h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -16.909 32.712)"></path><path d="m43.124 44h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -16.91 60.711)"></path><path d="m17 37h2v2h-2z"></path><path d="m45 37h2v2h-2z"></path><path d="m18.876 44h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -19.822 15.946)"></path><path d="m43.124 30h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -9.589 26.217)"></path><path d="m24 49.124h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -30.911 46.742)"></path><path d="m38 24.876h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -2.898 46.735)"></path><path d="m33 35.1843v-8.1843h-2v8.1843a2.9926 2.9926 0 1 0 3.8157 3.8157h6.1843v-2h-6.1843a2.9951 2.9951 0 0 0 -1.8157-1.8157zm-1 3.8157a1 1 0 1 1 1-1 1.0013 1.0013 0 0 1 -1 1z"></path><path d="m32 19a19 19 0 1 0 19 19 19.0216 19.0216 0 0 0 -19-19zm0 36a17 17 0 1 1 17-17 17.019 17.019 0 0 1 -17 17z"></path><path d="m54.793 25.5205 1.414-1.4141a8 8 0 0 0 -5.657-13.6564 8.0878 8.0878 0 0 0 -1.1643.0933 12.618 12.618 0 0 0 -11.0014-6.5433h-12.7686a12.4539 12.4539 0 0 0 -11.0013 6.543 8.0934 8.0934 0 0 0 -1.1644-.093 8 8 0 0 0 -5.657 13.6564l1.414 1.4141 4.95-4.95 1.3854 1.3854a22.9384 22.9384 0 0 0 -1.0157 30.9745l-2.7559 3.062a3 3 0 0 0 2.2261 5.0078q.0805 0 .1611-.0044a2.9783 2.9783 0 0 0 2.0718-.9893l2.7533-3.0589a22.9347 22.9347 0 0 0 26.0344 0l2.7525 3.0587a3 3 0 1 0 4.46-4.0131l-2.756-3.0625a22.9383 22.9383 0 0 0 -1.0156-30.9745l1.3854-1.3854zm0-11.3135a6 6 0 0 1 0 8.4854l-8.4854-8.4854a6 6 0 0 1 8.4854 0zm-45.586 8.4854a6 6 0 0 1 8.4854-8.4854zm5.5357 35.977a.99.99 0 0 1 -.69.3291 1.0049 1.0049 0 0 1 -.7216-.2548 1.0005 1.0005 0 0 1 -.0743-1.4126l2.6382-2.9311c.4756.4672.9688.9169 1.4833 1.3417zm36.2558-.6167a.9917.9917 0 0 1 -.33.691 1.0216 1.0216 0 0 1 -1.4121-.0748l-2.6351-2.9276c.5146-.4248 1.0076-.8745 1.4833-1.3417l2.6382 2.9319a.9918.9918 0 0 1 .2557.7212zm-18.9985.9473a21 21 0 1 1 21-21 21.0236 21.0236 0 0 1 -21 21zm15-38.4138a22.8929 22.8929 0 0 0 -14-5.5609v-3.0253h3v-2h-8v2h3v3.0253a22.8929 22.8929 0 0 0 -14 5.5609l-1.4295-1.43 4.95-4.95-1.4141-1.414a7.9813 7.9813 0 0 0 -2.4891-1.689 10.45 10.45 0 0 1 8.9984-5.1032h12.7686a10.5932 10.5932 0 0 1 8.9974 5.1045 7.984 7.984 0 0 0 -2.4881 1.6885l-1.4136 1.414 4.95 4.95z"></path></svg>
+          <svg className='w-[70px] h-[70px] m-auto transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 64 64" width="512"><path d="m31 23h2v2h-2z"></path><path d="m31 51h2v2h-2z"></path><path d="m24 24.876h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -9.589 15.968)"></path><path d="m38 49.124h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -19.838 26.217)"></path><path d="m18.876 30h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -16.909 32.712)"></path><path d="m43.124 44h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -16.91 60.711)"></path><path d="m17 37h2v2h-2z"></path><path d="m45 37h2v2h-2z"></path><path d="m18.876 44h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -19.822 15.946)"></path><path d="m43.124 30h2v2h-2z" transform="matrix(.866 -.5 .5 .866 -9.589 26.217)"></path><path d="m24 49.124h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -30.911 46.742)"></path><path d="m38 24.876h2v2h-2z" transform="matrix(.5 -.866 .866 .5 -2.898 46.735)"></path><path d="m33 35.1843v-8.1843h-2v8.1843a2.9926 2.9926 0 1 0 3.8157 3.8157h6.1843v-2h-6.1843a2.9951 2.9951 0 0 0 -1.8157-1.8157zm-1 3.8157a1 1 0 1 1 1-1 1.0013 1.0013 0 0 1 -1 1z"></path><path d="m32 19a19 19 0 1 0 19 19 19.0216 19.0216 0 0 0 -19-19zm0 36a17 17 0 1 1 17-17 17.019 17.019 0 0 1 -17 17z"></path><path d="m54.793 25.5205 1.414-1.4141a8 8 0 0 0 -5.657-13.6564 8.0878 8.0878 0 0 0 -1.1643.0933 12.618 12.618 0 0 0 -11.0014-6.5433h-12.7686a12.4539 12.4539 0 0 0 -11.0013 6.543 8.0934 8.0934 0 0 0 -1.1644-.093 8 8 0 0 0 -5.657 13.6564l1.414 1.4141 4.95-4.95 1.3854 1.3854a22.9384 22.9384 0 0 0 -1.0157 30.9745l-2.7559 3.062a3 3 0 0 0 2.2261 5.0078q.0805 0 .1611-.0044a2.9783 2.9783 0 0 0 2.0718-.9893l2.7533-3.0589a22.9347 22.9347 0 0 0 26.0344 0l2.7525 3.0587a3 3 0 1 0 4.46-4.0131l-2.756-3.0625a22.9383 22.9383 0 0 0 -1.0156-30.9745l1.3854-1.3854zm0-11.3135a6 6 0 0 1 0 8.4854l-8.4854-8.4854a6 6 0 0 1 8.4854 0zm-45.586 8.4854a6 6 0 0 1 8.4854-8.4854zm5.5357 35.977a.99.99 0 0 1 -.69.3291 1.0049 1.0049 0 0 1 -.7216-.2548 1.0005 1.0005 0 0 1 -.0743-1.4126l2.6382-2.9311c.4756.4672.9688.9169 1.4833 1.3417zm36.2558-.6167a.9917.9917 0 0 1 -.33.691 1.0216 1.0216 0 0 1 -1.4121-.0748l-2.6351-2.9276c.5146-.4248 1.0076-.8745 1.4833-1.3417l2.6382 2.9319a.9918.9918 0 0 1 .2557.7212zm-18.9985.9473a21 21 0 1 1 21-21 21.0236 21.0236 0 0 1 -21 21zm15-38.4138a22.8929 22.8929 0 0 0 -14-5.5609v-3.0253h3v-2h-8v2h3v3.0253a22.8929 22.8929 0 0 0 -14 5.5609l-1.4295-1.43 4.95-4.95-1.4141-1.414a7.9813 7.9813 0 0 0 -2.4891-1.689 10.45 10.45 0 0 1 8.9984-5.1032h12.7686a10.5932 10.5932 0 0 1 8.9974 5.1045 7.984 7.984 0 0 0 -2.4881 1.6885l-1.4136 1.414 4.95 4.95z"></path></svg>
           <br />
           <h2 className='text-3xl transition-all duration-300 group-hover:text-blue-700'>Learn on Your <br /> Time</h2>
           <br />
@@ -165,7 +256,7 @@ const LanguageLanding = () => {
         </div>
 
         <div className='border border-gray-800 rounded-2xl p-[30px] w-[300px] h-[450px] transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-blue-500 hover:bg-blue-50 cursor-pointer'>
-          <svg className='w-[70px] h-[70px] transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512"><path d="M57,3H10v7.05a10.129,10.129,0,0,0-3.6895.9345C4.82,11.7285,4,12.8,4,14s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,17.95v4.1a10.129,10.129,0,0,0-3.6895.9345C4.82,23.7285,4,24.8,4,26s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,29.95v4.1a10.129,10.129,0,0,0-3.6895.9345C4.82,35.7285,4,36.8,4,38s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,41.95v4.1a10.129,10.129,0,0,0-3.6895.9345C4.82,47.7285,4,48.8,4,50s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,53.95V61H57a3.0033,3.0033,0,0,0,3-3V6A3.0033,3.0033,0,0,0,57,3ZM7.2041,15.2266C6.4614,14.8555,6,14.3853,6,14s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,12.0489V15.92A7.9453,7.9453,0,0,1,7.2041,15.2266Zm0,12C6.4614,26.8555,6,26.3853,6,26s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,24.0489V27.92A7.9453,7.9453,0,0,1,7.2041,27.2266Zm0,12C6.4614,38.8555,6,38.3853,6,38s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,36.0489V39.92A7.9453,7.9453,0,0,1,7.2041,39.2266Zm0,12C6.4614,50.8555,6,50.3853,6,50s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,48.0489V51.92A7.9453,7.9453,0,0,1,7.2041,51.2266ZM50,59H12V53.95a10.129,10.129,0,0,0,3.69-.9345C17.18,52.2715,18,51.2,18,50s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,49.1445,16,49.6147,16,50s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,51.92V41.95a10.129,10.129,0,0,0,3.69-.9345C17.18,40.2715,18,39.2,18,38s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,37.1445,16,37.6147,16,38s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,39.92V29.95a10.129,10.129,0,0,0,3.69-.9345C17.18,28.2715,18,27.2,18,26s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,25.1445,16,25.6147,16,26s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,27.92V17.95a10.129,10.129,0,0,0,3.69-.9345C17.18,16.2715,18,15.2,18,14s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,13.1445,16,13.6147,16,14s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,15.92V5H50ZM57,5a1.0013,1.0013,0,0,1,1,1v5H52V5ZM52,37.6665V26.3335h6v11.333Zm6,2V51H52V39.6665Zm-6-15.333V13h6V24.3335ZM57,59H52V53h6v5A1.0013,1.0013,0,0,1,57,59Z"></path><path d="M24,53H42a3.0033,3.0033,0,0,0,3-3V42a3.0033,3.0033,0,0,0-3-3H24a3.0033,3.0033,0,0,0-3,3v8A3.0033,3.0033,0,0,0,24,53ZM23,42a1.0013,1.0013,0,0,1,1-1H42a1.0013,1.0013,0,0,1,1,1v8a1.0013,1.0013,0,0,1-1,1H24a1.0013,1.0013,0,0,1-1-1Z"></path><rect x="25" y="20" width="18" height="2"></rect><rect x="25" y="12" width="18" height="2"></rect></svg>
+          <svg className='w-[70px] h-[70px] m-auto transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512"><path d="M57,3H10v7.05a10.129,10.129,0,0,0-3.6895.9345C4.82,11.7285,4,12.8,4,14s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,17.95v4.1a10.129,10.129,0,0,0-3.6895.9345C4.82,23.7285,4,24.8,4,26s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,29.95v4.1a10.129,10.129,0,0,0-3.6895.9345C4.82,35.7285,4,36.8,4,38s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,41.95v4.1a10.129,10.129,0,0,0-3.6895.9345C4.82,47.7285,4,48.8,4,50s.82,2.2715,2.31,3.0156A10.1327,10.1327,0,0,0,10,53.95V61H57a3.0033,3.0033,0,0,0,3-3V6A3.0033,3.0033,0,0,0,57,3ZM7.2041,15.2266C6.4614,14.8555,6,14.3853,6,14s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,12.0489V15.92A7.9453,7.9453,0,0,1,7.2041,15.2266Zm0,12C6.4614,26.8555,6,26.3853,6,26s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,24.0489V27.92A7.9453,7.9453,0,0,1,7.2041,27.2266Zm0,12C6.4614,38.8555,6,38.3853,6,38s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,36.0489V39.92A7.9453,7.9453,0,0,1,7.2041,39.2266Zm0,12C6.4614,50.8555,6,50.3853,6,50s.4614-.8555,1.2046-1.2266A8.08,8.08,0,0,1,10,48.0489V51.92A7.9453,7.9453,0,0,1,7.2041,51.2266ZM50,59H12V53.95a10.129,10.129,0,0,0,3.69-.9345C17.18,52.2715,18,51.2,18,50s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,49.1445,16,49.6147,16,50s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,51.92V41.95a10.129,10.129,0,0,0,3.69-.9345C17.18,40.2715,18,39.2,18,38s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,37.1445,16,37.6147,16,38s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,39.92V29.95a10.129,10.129,0,0,0,3.69-.9345C17.18,28.2715,18,27.2,18,26s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,25.1445,16,25.6147,16,26s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,27.92V17.95a10.129,10.129,0,0,0,3.69-.9345C17.18,16.2715,18,15.2,18,14s-.82-2.2715-2.31-3.0156l-.8936,1.789C15.5386,13.1445,16,13.6147,16,14s-.4614.8555-1.2046,1.2266A7.9408,7.9408,0,0,1,12,15.92V5H50ZM57,5a1.0013,1.0013,0,0,1,1,1v5H52V5ZM52,37.6665V26.3335h6v11.333Zm6,2V51H52V39.6665Zm-6-15.333V13h6V24.3335ZM57,59H52V53h6v5A1.0013,1.0013,0,0,1,57,59Z"></path><path d="M24,53H42a3.0033,3.0033,0,0,0,3-3V42a3.0033,3.0033,0,0,0-3-3H24a3.0033,3.0033,0,0,0-3,3v8A3.0033,3.0033,0,0,0,24,53ZM23,42a1.0013,1.0013,0,0,1,1-1H42a1.0013,1.0013,0,0,1,1,1v8a1.0013,1.0013,0,0,1-1,1H24a1.0013,1.0013,0,0,1-1-1Z"></path><rect x="25" y="20" width="18" height="2"></rect><rect x="25" y="12" width="18" height="2"></rect></svg>
           <br />
           <h2 className='text-3xl transition-all duration-300 group-hover:text-blue-700'>Skill-Based Focus</h2>
           <br />
@@ -185,7 +276,7 @@ const LanguageLanding = () => {
         </div>
 
         <div className='border border-gray-800 rounded-2xl p-[30px] w-[300px] h-[450px] transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-blue-500 hover:bg-blue-50 cursor-pointer'>
-          <svg className='w-[70px] h-[70px] transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 64 64" width="512"><path d="m55 51v-43a5.0059 5.0059 0 0 0 -5-5h-40a5.0059 5.0059 0 0 0 -5 5v5h8v3.0507a10.9915 10.9915 0 0 0 -6 19.4279v13.4355l6-6v13.0859a5.0059 5.0059 0 0 0 5 5h36a5.0059 5.0059 0 0 0 5-5v-5zm-48-40v-3a3 3 0 0 1 6 0v3zm-2 16a9 9 0 1 1 9 9 9.01 9.01 0 0 1 -9-9zm4 9.7857a10.9011 10.9011 0 0 0 10 0v7.3l-5-5-5 5zm12 19.2143a3 3 0 0 1 -6 0v-13.0859l6 6v-13.4355a10.9915 10.9915 0 0 0 -6-19.4279v-8.0507a4.9732 4.9732 0 0 0 -1.002-3h36.002a3.0033 3.0033 0 0 1 3 3v43h-32zm36 0a3.0033 3.0033 0 0 1 -3 3h-32.002a4.9732 4.9732 0 0 0 1.002-3v-3h34z"></path><path d="m20 9h14v2h-14z"></path><path d="m29 18h7v2h-7z"></path><path d="m29 24h14v2h-14z"></path><path d="m29 30h14v2h-14z"></path><path d="m29 36h14v2h-14z"></path><path d="m35 45h14v2h-14z"></path><path d="m46 8a4 4 0 1 0 4 4 4.0039 4.0039 0 0 0 -4-4zm0 6a2 2 0 1 1 2-2 2.0027 2.0027 0 0 1 -2 2z"></path><path d="m14 33a6 6 0 1 0 -6-6 6.0066 6.0066 0 0 0 6 6zm0-10a4 4 0 1 1 -4 4 4.0039 4.0039 0 0 1 4-4z"></path></svg>
+          <svg className='w-[70px] m-auto h-[70px] transition-all duration-300 group-hover:scale-110 group-hover:text-blue-600' xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 64 64" width="512"><path d="m55 51v-43a5.0059 5.0059 0 0 0 -5-5h-40a5.0059 5.0059 0 0 0 -5 5v5h8v3.0507a10.9915 10.9915 0 0 0 -6 19.4279v13.4355l6-6v13.0859a5.0059 5.0059 0 0 0 5 5h36a5.0059 5.0059 0 0 0 5-5v-5zm-48-40v-3a3 3 0 0 1 6 0v3zm-2 16a9 9 0 1 1 9 9 9.01 9.01 0 0 1 -9-9zm4 9.7857a10.9011 10.9011 0 0 0 10 0v7.3l-5-5-5 5zm12 19.2143a3 3 0 0 1 -6 0v-13.0859l6 6v-13.4355a10.9915 10.9915 0 0 0 -6-19.4279v-8.0507a4.9732 4.9732 0 0 0 -1.002-3h36.002a3.0033 3.0033 0 0 1 3 3v43h-32zm36 0a3.0033 3.0033 0 0 1 -3 3h-32.002a4.9732 4.9732 0 0 0 1.002-3v-3h34z"></path><path d="m20 9h14v2h-14z"></path><path d="m29 18h7v2h-7z"></path><path d="m29 24h14v2h-14z"></path><path d="m29 30h14v2h-14z"></path><path d="m29 36h14v2h-14z"></path><path d="m35 45h14v2h-14z"></path><path d="m46 8a4 4 0 1 0 4 4 4.0039 4.0039 0 0 0 -4-4zm0 6a2 2 0 1 1 2-2 2.0027 2.0027 0 0 1 -2 2z"></path><path d="m14 33a6 6 0 1 0 -6-6 6.0066 6.0066 0 0 0 6 6zm0-10a4 4 0 1 1 -4 4 4.0039 4.0039 0 0 1 4-4z"></path></svg>
           <br />
           <h2 className='text-3xl transition-all duration-300 group-hover:text-blue-700'>Active Learning</h2>
           <br />
