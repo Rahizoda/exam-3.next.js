@@ -31,65 +31,205 @@
 
 
 /* Контейнер Swiper */
-.mySwiper {
+.swiper {
   width: 100%;
-  max-width: 700px;
-  height: 250px;
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Кождый слайд */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 200px;
-  margin: auto;
-  border-radius: 15px;
-  padding: 50px;
-  padding-left: 100px;
-  margin-right: 0px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.image .imga {
-  width: 280px;
   height: 100%;
-  border-radius: 5%;
 }
-/* Картинка в центре слайда */
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .swiper-slide img {
-   max-width: 200px;
-  max-height: 200px;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  margin: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scale(0.8);
+  border-radius: 50%;
+  width: 48px !important;
+  height: 48px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.25rem !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.group:hover .swiper-button-next,
+.group:hover .swiper-button-prev {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+
+  transform: scale(1.1);
+}
+
+/* Пагинация с прогресс-баром */
+.swiper-pagination {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.swiper-pagination-bullet-active {
+  background: transparent;
+  transform: scale(1);
+}
+
+.swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.6);
 
 }
 
-.mySwipe2{
-  width: 1150px;
- display: flex;
- justify-content: space-between;
- gap: 10px;
- align-items: center;
- padding: 10px;
+.pagination-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  transform: scale(0);
+  transform-origin: center;
+  animation: paginationProgress 4.5s linear forwards;
 }
 
-.mySwipe2 .mySwipe2-swiper-slide{
-  width: 350px;
-  height: 400px;
+@keyframes paginationProgress {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
 
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 
-.mySwipe2-swiper-slide img{
-  max-width: 300px;
-  max-height:400px;
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+@keyframes ripple-slow {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-ripple-slow {
+  animation: ripple-slow 3s ease-in-out infinite;
+}
+
+.group:hover .animate-ripple-slow {
+  animation-duration: 2s;
+}
+
+
+
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+
+@keyframes continuousShine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.shine-element {
+  animation: continuousShine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.shine-animation {
+  animation: shine 3s infinite linear;
+}
+
+.group:hover .shine-animation {
+  animation-duration: 1s;
 }
 
 .div1{

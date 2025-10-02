@@ -21,34 +21,8 @@ import Section3 from './section3';
 const languagess = ['+ German', '+ Spanish', '+ Italian', '+ German']
 import { CheckCircle2, Globe, Briefcase, TrendingUp, Code, Users, Award } from 'lucide-react';
 import IntelectStatistics from './section4';
+import HeroSection from './section1swiper';
 
-const images = [
-  {
-    image: '/image copy 2.png',
-    title: 'Speak Fluently, Connect Globally',
-    text: 'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
-  },
-  {
-    image: '/image copy 3.png',
-    title: 'Speak Fluently, Connect Globally',
-    text: 'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
-  },
-  {
-    image: '/image copy 4.png',
-    title: 'Speak Fluently, Connect Globally',
-    text: 'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
-  },
-  {
-    image: '/image copy.png',
-    title: 'Speak Fluently, Connect Globally',
-    text: 'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
-  },
-  {
-    image: '/image.png',
-    title: 'Speak Fluently, Connect Globally',
-    text: 'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
-  }
-]
 
 const advantages = [
   {
@@ -128,210 +102,8 @@ const LanguageLanding = () => {
 
   return (
     <div className="bg-accent pt-[50px] dark:bg-[#06062b]">
-      <div className='mt-[-50px]'>
-
-        <Swiper
-          spaceBetween={20}
-          centeredSlides={true}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-            waitForTransition: true,
-            pauseOnMouseEnter: true,
-          }}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-            renderBullet: function (index, className) {
-              return '<span class="' + className + ' !w-2 !h-2 sm:!w-3 sm:!h-3 !bg-white/50 !opacity-100 hover:!bg-white !transition-all !duration-300 !mx-1"></span>';
-            }
-          }}
-          navigation={{
-            nextEl: '.swiper-button-next-custom',
-            prevEl: '.swiper-button-prev-custom',
-          }}
-          modules={[Autoplay, Pagination, Navigation]}
-          speed={1000}
-          loop={true}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-              centeredSlides: false,
-            },
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 15,
-              centeredSlides: false,
-            },
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-              centeredSlides: true,
-            },
-            1024: {
-              slidesPerView: 1,
-              spaceBetween: 25,
-              centeredSlides: true,
-            },
-            1280: {
-              slidesPerView: 1,
-              spaceBetween: 30,
-              centeredSlides: true,
-            }
-          }}
-          className="modern-swiper relative"
-          style={{
-            width: '100%',
-            maxWidth: '95%',
-            margin: '60px auto 0',
-            borderRadius: '20px',
-            overflow: 'hidden',
-          }}
-        >
-
-          {images.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[550px] lg:min-h-[450px] rounded-2xl overflow-hidden">
-                {/* Main Content Container */}
-                <div className="flex flex-col lg:flex-row items-center justify-between w-full h-full p-4 sm:p-6 md:p-8 lg:p-12 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-[#0f0f49] dark:via-[#0d0d42] dark:to-[#1a1a5e] relative">
-
-                  {/* Background Effects - адаптивные */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-purple-500/5 z-0"></div>
-                  <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-blue-400/10 rounded-full blur-2xl sm:blur-3xl -translate-y-24 sm:-translate-y-32 translate-x-24 sm:translate-x-32"></div>
-                  <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-purple-400/10 rounded-full blur-2xl sm:blur-3xl translate-y-24 sm:translate-y-32 -translate-x-24 sm:-translate-x-32"></div>
-
-                  {/* Content Section - адаптивная */}
-                  <div className="flex-1 max-w-full lg:max-w-lg text-center lg:text-left z-10 mb-6 sm:mb-8 lg:mb-0 lg:pr-6 xl:pr-8">
-                    <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-white/10 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm border border-white/20">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                      Featured Course
-                    </div>
-
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                      {item.title}
-                    </h1>
-
-                    <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-6 sm:mb-8 opacity-90 max-w-2xl">
-                      {item.text}
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                      <button className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-none px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl sm:rounded-2xl cursor-pointer shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 sm:hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                        <span className="relative flex items-center gap-2 sm:gap-3 text-sm sm:text-base">
-                          Read More
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                          </svg>
-                        </span>
-                      </button>
-
-                      <button className="group bg-white/90 dark:bg-white/10 backdrop-blur-sm text-blue-600 dark:text-white border border-blue-200 dark:border-white/20 px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl sm:rounded-2xl cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 sm:hover:-translate-y-1 transition-all duration-300 hover:bg-white dark:hover:bg-white/20">
-                        <span className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base">
-                          Watch Demo
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Image Section - полностью адаптивная */}
-                  <div className="flex-1 max-w-full lg:max-w-md xl:max-w-xl w-full lg:w-auto z-10 mt-6 sm:mt-8 lg:mt-0">
-                    <div className="relative w-full">
-                      <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[380px] xl:h-[400px] bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-2xl sm:rounded-3xl p-2 shadow-xl sm:shadow-2xl transform group-hover:scale-105 transition-transform duration-700 mx-auto max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-full">
-                        <div className="relative w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-full h-full object-cover object-center shadow-inner border-2 sm:border-4 border-white/50 dark:border-white/10 group-hover:border-white/80 transition-all duration-500"
-                            style={{
-                              maxHeight: '100%',
-                              minHeight: '100%',
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-
-          {/* Custom Pagination Container - адаптивный */}
-          <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-1 sm:space-x-2"></div>
-        </Swiper>
-
-        <style jsx>{`
-  .modern-swiper {
-    --swiper-pagination-bullet-size: 8px;
-    --swiper-pagination-bullet-inactive-opacity: 0.4;
-    --swiper-pagination-bullet-inactive-color: #fff;
-    --swiper-pagination-bottom: 12px;
-  }
-
-  .modern-swiper .swiper-pagination-bullet {
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: all 0.3s ease;
-  }
-
-  .modern-swiper .swiper-pagination-bullet-active {
-    background: #fff;
-    transform: scale(1.2);
-    border-color: rgba(255,255,255,0.8);
-  }
-
-  /* Адаптивные стили для разных экранов */
-  @media (max-width: 480px) {
-    .modern-swiper {
-      margin-top: 40px;
-      border-radius: 16px;
-    }
-
-    .swiper-button-prev-custom,
-    .swiper-button-next-custom {
-      display: none;
-    }
-
-    .modern-swiper {
-      --swiper-pagination-bullet-size: 6px;
-      --swiper-pagination-bottom: 8px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .modern-swiper {
-      margin-top: 50px;
-      border-radius: 18px;
-    }
-
-    .swiper-button-prev-custom,
-    .swiper-button-next-custom {
-      display: flex;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .modern-swiper {
-      --swiper-pagination-bullet-size: 10px;
-      --swiper-pagination-bottom: 16px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .modern-swiper {
-      --swiper-pagination-bullet-size: 12px;
-      --swiper-pagination-bottom: 20px;
-    }
-  }
-`}</style>
-
-
-      </div>
+        <br /><br /><br />
+        <HeroSection/>
 
       <div className='flex p-[50px_0px] w-[95%] m-auto flex-col md:flex-row justify-around text-center items-center gap-8'>
 
@@ -462,25 +234,25 @@ const LanguageLanding = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 grid-rows-3 w-[95%] m-auto gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 grid-rows-auto w-[95%] max-w-7xl mx-auto gap-3 sm:gap-4 md:gap-5">
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="group w-full flex items-start space-x-6 p-8 bg-white/80 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-200/60 hover:border-blue-200 hover:bg-white backdrop-blur-sm hover:-translate-y-1 cursor-pointer"
+                className="group w-full flex items-start space-x-4 sm:space-x-6 p-4 sm:p-6 md:p-8 bg-white/80 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg md:hover:shadow-xl transition-all duration-500 border border-gray-200/60 hover:border-blue-200 hover:bg-white backdrop-blur-sm hover:-translate-y-0.5 md:hover:-translate-y-1 cursor-pointer"
               >
-                <div className="flex-shrink-0 mt-1">
+                <div className="flex-shrink-0 mt-0 sm:mt-1">
                   <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md group-hover:shadow-lg">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-105 md:group-hover:scale-110 transition-transform duration-300 shadow-md group-hover:shadow-lg">
                       {advantage.icon}
                     </div>
-                    <div className="absolute -inset-1 bg-blue-200 rounded-xl opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300"></div>
+                    <div className="absolute -inset-1 bg-blue-200 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300"></div>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <p className="text-gray-800 text-xl leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300">
+                <div className="flex-1 min-w-0"> {/* min-w-0 предотвращает переполнение */}
+                  <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300 break-words">
                     {advantage.text}
                   </p>
-                  <div className="h-0.5 w-0 bg-blue-500 group-hover:w-20 mt-3 transition-all duration-500 ease-out"></div>
+                  <div className="h-0.5 w-0 bg-blue-500 group-hover:w-12 md:group-hover:w-16 lg:group-hover:w-20 mt-2 sm:mt-3 transition-all duration-500 ease-out"></div>
                 </div>
               </div>
             ))}
@@ -510,223 +282,341 @@ const LanguageLanding = () => {
         <p>Listen to what those who have already completed our courses say and get the necessary recommendations from theme</p>
       </div>
 
-      <div className="flex  items-center gap-[20px] p-[50px_0px] justify-center">
-        <video
-          src="./video_2025-10-01_09-37-28.mp4"
-          controls
-          autoPlay={false}
-          loop
-          muted
-          className="rounded-xl shadow-lg w-[300px] h-[400px]"
-        />
-        <video
-          src="/video_2025-10-01_09-44-46(1).mp4"
-          controls
-          autoPlay={false}
-          loop
-          muted
-          className="rounded-xl shadow-lg w-[300px] h-[400px]"
-        />
-        <video
-          src="/video_2025-10-01_09-50-17(2).mp4"
-          controls
-          autoPlay={false}
-          loop
-          muted
-          className="rounded-xl shadow-lg w-[300px] h-[400px]"
-        />
-        <video
-          src="./video_2025-10-01_09-37-28.mp4"
-          controls
-          autoPlay={false}
-          loop
-          muted
-          className="rounded-xl shadow-lg w-[300px] h-[400px]"
-        />
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-6 p-8 sm:p-12 lg:p-16 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 relative overflow-hidden">
+
+        {/* Background Decorations */}
+        <div className="absolute inset-0 bg-grid-slate-200/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-800/50 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
+        <div className="absolute top-0 right-0 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl -translate-y-36 translate-x-36"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl translate-y-36 -translate-x-36"></div>
+
+        {/* Video Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-6 w-full max-w-7xl mx-auto relative z-10">
+          {[
+            { src: "./video_2025-10-01_09-37-28.mp4", title: "Design Process" },
+            { src: "/video_2025-10-01_09-44-46(1).mp4", title: "Development" },
+            { src: "/video_2025-10-01_09-50-17(2).mp4", title: "Animation" },
+            { src: "./video_2025-10-01_09-37-28.mp4", title: "Final Result" }
+          ].map((video, index) => (
+            <div
+              key={index}
+              className="group relative flex flex-col items-center transition-all duration-500 hover:-translate-y-2"
+            >
+              {/* Video Container with Modern Styling */}
+              <div className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[260px] xl:max-w-[300px]">
+                {/* Outer Glow Effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Main Video Card */}
+                <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/50 dark:border-gray-700/50 group-hover:shadow-2xl group-hover:border-blue-200/50 dark:group-hover:border-blue-400/30 transition-all duration-500 overflow-hidden">
+
+                  {/* Animated Border */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/50 to-blue-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+
+                  {/* Video with Fixed Size and Controls */}
+                  <div className="relative w-full h-[320px] sm:h-[350px] lg:h-[320px] xl:h-[350px] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700">
+                    <video
+                      src={video.src}
+                      controls
+                      autoPlay={false}
+                      loop={false}
+                      muted={true}
+                      preload="metadata"
+                      className="w-full h-full object-cover"
+                      onClick={(e) => e.preventDefault()}
+                      onPlay={(e) => {
+                        // Останавливаем все другие видео при воспроизведении одного
+                        document.querySelectorAll('video').forEach(v => {
+                          if (v !== e.target) v.pause();
+                        });
+                      }}
+                    />
+
+                    {/* Custom Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/20 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-300 cursor-pointer"
+                      onClick={(e) => {
+                        const video = e.currentTarget.previousElementSibling;
+                        if (video.paused) {
+                          video.play();
+                          e.currentTarget.style.opacity = '0';
+                        }
+                      }}>
+                      <div className="w-16 h-16 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110 shadow-2xl">
+                        <svg className="w-6 h-6 text-blue-600 dark:text-blue-400 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Progress Indicator */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 w-0 group-hover:w-full transition-all duration-1000 delay-300"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Video Title */}
+              <div className="mt-4 text-center">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm px-3 py-1.5 rounded-full border border-gray-200/50 dark:border-gray-700/50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-300">
+                  {video.title}
+                </span>
+              </div>
+
+              {/* Hover Indicator */}
+              <div className="absolute -bottom-2 w-6 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Section Title for Mobile */}
+        <div className="lg:hidden text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+            Video Showcase
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base">
+            Explore our creative process
+          </p>
+        </div>
       </div>
 
-      <section>
-        <div className='flex justify-between p-[40px] items-end font-bold '>
-          <div>
-            <p className='text-blue-600'> benefits of our courses</p>
-            <h1 className='text-4xl'>Learn, Practice, Perfect with <br /> Professionals</h1>
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 bg-grid-slate-200/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-800/50"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl -translate-y-48 translate-x-48"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl translate-y-48 -translate-x-48"></div>
+
+        {/* Header Section */}
+        <div className='flex flex-col lg:flex-row justify-between items-start lg:items-end p-6 sm:p-8 lg:p-12 relative z-10'>
+          <div className='mb-6 lg:mb-0'>
+            <p className='text-blue-600 font-semibold text-sm sm:text-base mb-2 sm:mb-3'>Benefits of our courses</p>
+            <h1 className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight sm:leading-tight lg:leading-tight'>
+              Learn, Practice, Perfect with <br className="hidden sm:block" />
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Professionals</span>
+            </h1>
           </div>
-          <button className="group flex items-center justify-start w-11 h-11 bg-blue-600  rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-[250px] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
-            <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
-              <EastIcon sx={{ color: "white" }} />
+
+          {/* Animated Button */}
+          <button className="group flex items-center justify-start w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl cursor-pointer relative overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 hover:w-48 sm:hover:w-56 lg:hover:w-60">
+            <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:pl-4">
+              <EastIcon sx={{ color: "white", fontSize: { xs: "1.5rem", sm: "1.75rem", lg: "2rem" } }} />
             </div>
-            <div className="absolute  right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-              Wiev all Courses
+            <div className="absolute right-4 transform translate-x-full opacity-0 text-white text-sm sm:text-base font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 whitespace-nowrap">
+              View all Courses
             </div>
           </button>
         </div>
 
-        <div className='flex justify-between p-[30px] items-center '>
-          <div className='font-bold flex flex-col gap-[20px] w-[500px]'>
+        {/* Content Section */}
+        <div className='flex flex-col lg:flex-row justify-between items-start p-4 sm:p-6 lg:p-8 xl:p-12 gap-8 lg:gap-12 relative z-10'>
 
-            <div className='p-[10px] w-full '>
-              <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>01</span> Interactive Learning</h3>
-              <p className='text-xl text-gray-600'>Engage with experienced instructors in real-time.</p>
-            </div>
-            <hr />
-            <div className='p-[10px] w-full '>
-              <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>02</span> Personalized Approach</h3>
-              <p className='text-xl text-gray-600'> Tailored to your goals, pace, and proficiency level.</p>
-              <hr />
-            </div>
-            <div className='p-[10px] w-full '>
-              <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>03</span>Flexibility and Accessibility</h3>
-              <p className='text-xl text-gray-600'>Accessible from any device, no matter where you are.</p>
-            </div>
-            <hr />
-            <div className='p-[10px] w-full '>
-              <h3 className='hover:text-blue-600 duration-350'><span className='text-blue-600'>04</span> Certifications and Recognition</h3>
-              <p className='text-xl text-gray-600'>Earn globally recognized credentials upon course.</p>
-            </div>
-            <hr />
+          {/* Benefits List */}
+          <div className='w-full lg:w-1/2 xl:w-[500px] flex flex-col gap-4 sm:gap-6'>
+            {[
+              {
+                number: "01",
+                title: "Interactive Learning",
+                description: "Engage with experienced instructors in real-time."
+              },
+              {
+                number: "02",
+                title: "Personalized Approach",
+                description: "Tailored to your goals, pace, and proficiency level."
+              },
+              {
+                number: "03",
+                title: "Flexibility and Accessibility",
+                description: "Accessible from any device, no matter where you are."
+              },
+              {
+                number: "04",
+                title: "Certifications and Recognition",
+                description: "Earn globally recognized credentials upon course."
+              }
+            ].map((benefit, index) => (
+              <div key={index} className='group relative'>
+                <div className='p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:border-blue-200/50 dark:hover:border-blue-400/30 hover:-translate-y-1'>
+                  <h3 className='text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400'>
+                    <span className='text-blue-600 dark:text-blue-400'>{benefit.number}</span> {benefit.title}
+                  </h3>
+                  <p className='text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed'>
+                    {benefit.description}
+                  </p>
+
+                  {/* Hover Effect Line */}
+                  <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                </div>
+
+                {/* Separator */}
+                {index < 3 && (
+                  <div className="h-px bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-600/50 to-transparent my-2 sm:my-4"></div>
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="w-[600px] bg-div rounded-3xl  bg-cover bg-center h-screen">
-            {/* <img className='w-[600px] rounded-3xl' loading="lazy" decoding="async" width="1340" height="1020" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4.webp"  alt="" srcset="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4.webp 1340w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-300x228.webp 300w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-1024x779.webp 1024w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-768x585.webp 768w, https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4-1080x822.webp 1080w" sizes="(max-width: 1340px) 100vw, 1340px"></img> */}
-            <h1 className='text-[360px]  mb-[-80px] font-bold text-white'>b2</h1>
+          {/* Image Section */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[500px] lg:max-w-[600px] h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl group">
+
+              {/* Background Image with Overlay */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style={{
+                  backgroundImage: 'url("https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/hp4-image-4.webp")'
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 dark:from-blue-900/40 dark:to-purple-900/40"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+              </div>
+
+              {/* Large Text Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h1 className='text-6xl sm:text-8xl lg:text-9xl xl:text-[360px] font-bold text-white/10 dark:text-white/5 tracking-tighter select-none transition-all duration-500 group-hover:text-white/20 dark:group-hover:text-white/10'>
+                  b2
+                </h1>
+              </div>
+
+              {/* Floating Elements */}
+              <div className="absolute top-6 left-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Professional Level
+                </span>
+              </div>
+
+              <div className="absolute bottom-6 right-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  🎯 Certified
+                </span>
+              </div>
+
+              {/* Shine Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </div>
           </div>
         </div>
-
       </section>
 
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 1000, // 5 секунд на каждый слайд (можешь увеличить)
-          disableOnInteraction: false,
-          waitForTransition: true, // ждём пока завершится анимация перед переключением
-        }}
-        pagination={{ clickable: true }}
-        modules={[Autoplay, Pagination, Navigation]}
-        speed={1500} // скорость перехода между слайдами (1.5 секунды)
-        loop={true}
-        className="mySwiper"
-        style={{ maxWidth: '900px', padding: "50px 100px" }}
-      >
-        <SwiperSlide>
-          <img decoding="async" className="main_image" alt="3" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/3.webp"></img>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img decoding="async" className="main_image" alt="2" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/2.webp"></img>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img decoding="async" className="main_image" alt="1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/1.webp"></img>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img decoding="async" className="main_image" alt="6" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/6.webp"></img>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img decoding="async" className="main_image" alt="5" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/5.webp"></img>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img decoding="async" className="main_image" alt="4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/07/4.webp"></img>
-        </SwiperSlide>
-      </Swiper>
-      <hr />
+      <hr className="my-8 sm:my-12" />
 
-      <div>
-
-        <video src=""></video>
-      </div>
-
-
-      {/*  Language Cards */}
-      <section className="  px-4">
-        <div className="text-center mb-10">
-          <p className=" font-bold mt-2 text-4xl text-center">
-            Our courses are designed to empower learners at all <br />
-            levels, from beginners to advanced speakers. Trusted <br />
-            by 500+ students & business owners
+      {/* Language Cards Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight sm:leading-tight lg:leading-tight">
+            Our courses are designed to empower learners at all{" "}
+            <br className="hidden sm:block" />
+            levels, from beginners to advanced speakers.{" "}
+            <br className="hidden sm:block" />
+            Trusted by 500+ students & business owners
           </p>
-
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
           {languages.map((lang, index) => (
             <div
               key={index}
-              className={`
-            group p-6 border border-gray-400  rounded-2xl w-[300px] h-[400px] transition-all hover:scale-105 duration-700 shadow-md hover:shadow-lg
-            hover:bg-blue-600 hover:text-white
-           `}
+              className="group p-4 sm:p-6 border border-gray-300 dark:border-gray-600 rounded-xl sm:rounded-2xl w-full max-w-[300px] h-auto sm:h-[400px] transition-all duration-500 hover:scale-105 shadow-sm hover:shadow-xl hover:bg-blue-600 hover:text-white dark:hover:bg-blue-700"
             >
               {/* Flag */}
-              <div className="  mb-4">
+              <div className="mb-3 sm:mb-4">
                 <Image
                   src={lang.flag}
                   alt={lang.title}
-                  width={100}
-                  height={100}
-                  className="object-cover h-[50px] w-[55px] rounded-[50%] "
+                  width={80}
+                  height={80}
+                  className="object-cover h-10 w-10 sm:h-12 sm:w-12 rounded-full"
                 />
               </div>
-              <br /><br /><br />
+
               {/* Title */}
-              <h3 className="text-3xl font-semibold mb-1 ">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 sm:mb-3">
                 {lang.title}
               </h3>
-              <br />
+
               {/* Description */}
-              <p className="text-[20px] w-[280px] text-gray-600 group-hover:text-white ">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 group-hover:text-white mb-4 sm:mb-6 leading-relaxed">
                 {lang.description}
               </p>
-              <br />
+
               {/* Button */}
-              <button className="group flex items-center justify-start w-11 h-11 bg-white  rounded-[10px] cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg group-hover:w-[65%] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
-                <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
-                  <EastIcon sx={{ color: "blue", }} />
+              <button className="group flex items-center justify-start w-10 h-10 sm:w-11 sm:h-11 bg-white dark:bg-gray-800 rounded-lg cursor-pointer relative overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg group-hover:w-[65%] active:scale-95">
+                <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:pl-3">
+                  <EastIcon sx={{ color: "blue", fontSize: { xs: "1.25rem", sm: "1.5rem" } }} />
                 </div>
-                <div className="absolute  right-5 transform translate-x-full opacity-0 text-blue-600 text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                <div className="absolute right-3 transform translate-x-full opacity-0 text-blue-600 dark:text-blue-400 text-sm sm:text-base font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 whitespace-nowrap">
                   Read More
                 </div>
               </button>
-
             </div>
           ))}
         </div>
       </section>
 
-
-      <section className='pb-[800px] dark:bg-black m-[100px_0px] bg-gradient-to-r from-[#556886] to-[#05132b]  h-screen text-white'>
-        <div className='flex justify-between p-[40px] items-end font-bold '>
-          <div >
-            <p className=' text-lg'> our teachers</p>
-            <h1 className='text-6xl'>Master the Language <br /> with Expert Tutors</h1>
+      {/* Teachers Section */}
+      <section className='pb-40 sm:pb-60 lg:pb-80 xl:pb-[10px] dark:bg-black bg-gradient-to-r from-[#556886] to-[#05132b] text-white py-5 sm:py-16 lg:py-20'>
+        <div className='flex flex-col lg:flex-row justify-between items-start lg:items-end p-4 sm:p-6 lg:p-8 xl:p-12 2xl:p-16 gap-4 sm:gap-6 lg:gap-8 xl:gap-10'>
+          <div className="w-full lg:flex-1">
+            <p className='text-sm sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl mb-2 sm:mb-3 lg:mb-4 text-gray-600 dark:text-gray-400 font-medium uppercase tracking-wide'>
+              Our Teachers
+            </p>
+            <h1 className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight sm:leading-tight lg:leading-tight xl:leading-tight'>
+              Master the Language <br className="hidden sm:block" />
+              with <span className="text-blue-600 dark:text-blue-400">Expert Tutors</span>
+            </h1>
           </div>
-          <button className="group flex items-center justify-start w-11 h-11 bg-blue-600  rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-[250px] group-hover:rounded-lg active:translate-x-1 active:translate-y-1">
-            <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
-              <EastIcon sx={{ color: "white" }} />
+
+          <button className="group flex items-center justify-start w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18 bg-blue-600 hover:bg-blue-700 rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 hover:w-44 sm:hover:w-52 lg:hover:w-60 xl:hover:w-64 mt-4 lg:mt-0">
+            <div className="flex items-center justify-center w-full transition-all duration-500 group-hover:justify-start group-hover:pl-4">
+              <EastIcon sx={{
+                color: "white",
+                fontSize: {
+                  xs: "1.25rem",
+                  sm: "1.5rem",
+                  lg: "1.75rem",
+                  xl: "2rem"
+                }
+              }} />
             </div>
-            <div className="absolute  right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-              Wiev all Courses
+            <div className="absolute right-4 transform translate-x-full opacity-0 text-white text-sm sm:text-base lg:text-lg font-semibold transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 whitespace-nowrap">
+              View all Tutors
             </div>
           </button>
         </div>
-        <div className='pb-[300px]'>
-          <TeachersSlider />
-        </div>
-        <LessonCard />
+        <TeachersSlider />
+
+
       </section>
 
-      <div style={{ scrollbarColor: "transparent transparent" }} className='flex overflow-auto w-[95%] h-[400px] m-auto p-[50px_0px] gap-5'>
-        <img className='max-w-[300px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
-        <img className='max-w-[600px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
-        <img className='max-w-[300px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
-        <img className='max-w-[600px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
-        <img className='max-w-[300px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
-        <img className='max-w-[600px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
-        <img className='max-w-[300px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
-        <img className='max-w-[600px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
-        <img className='max-w-[300px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j4" alt="h4-gall-j4" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp"></img>
-        <img className='max-w-[600px] max-h-[400px]' class="elementor-lightbox-image elementor-lightbox-prevent-close swiper-lazy swiper-lazy-loaded" data-title="h4-gall-j1" alt="h4-gall-j1" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp"></img>
-        <img className='max-w-[300px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp" alt="" loading="lazy"></img>
-        <img className='max-w-[600px] max-h-[400px]' decoding="async" class="wgl-gallery_image" src="https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp" alt="" loading="lazy"></img>
+      {/* Gallery Section */}
+      <div
+        style={{ scrollbarColor: "transparent transparent" }}
+        className='flex overflow-x-auto w-[95%] h-[300px] sm:h-[350px] lg:h-[400px] mx-auto py-8 sm:py-12 lg:py-16 gap-3 sm:gap-4 lg:gap-5 snap-x snap-mandatory'
+      >
+        {[
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp", width: 300 },
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp", width: 600 },
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp", width: 300 },
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp", width: 600 },
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j4.webp", width: 300 },
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j1.webp", width: 600 },
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j3-740x960.webp", width: 300 },
+          { src: "https://wgl-dsites.net/lingplus/wp-content/uploads/2025/08/h4-gall-j2-1340x960.webp", width: 600 }
+        ].map((img, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 snap-center transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              className="h-full object-cover rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{
+                width: `clamp(200px, ${img.width * 0.8}px, ${img.width}px)`,
+                maxWidth: '90vw'
+              }}
+              src={img.src}
+              alt={`gallery-${index}`}
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
 
       <Section3 />

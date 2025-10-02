@@ -61,8 +61,8 @@ const teachers = [
 
 export default function TeachersSlider() {
   return (
-    <div className=" py-16">
-      <div className="max-w-7xl mx-auto px-6 pb-[100px]">
+    <div className=" py-16 w-[95%] m-auto">
+      <div className="max-w-[100%] mx-auto px-6 pb-[100px]">
         <Swiper
           modules={[Pagination]}
           spaceBetween={20}
