@@ -95,24 +95,6 @@ const IntelectStatistics = () => {
       </div>
 
       <div className="container mx-auto px-3 sm:px-4 md:px-6 relative z-10">
-        {/* Adaptive Header Section */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-blue-200 text-blue-700 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-xl sm:rounded-2xl text-xs sm:text-sm md:text-base font-medium mb-6 sm:mb-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div className="flex space-x-1">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce"></div>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce delay-100"></div>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce delay-200"></div>
-            </div>
-            <span className="whitespace-nowrap">Trusted by Thousands</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-gray-900 to-blue-600 bg-clip-text text-transparent mb-4 sm:mb-6 leading-tight">
-            Why <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Intelect</span>
-            <br className="hidden sm:block" /> Stands Out
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-md md:max-w-2xl mx-auto leading-relaxed font-light px-2 sm:px-0">
-            Transforming careers through cutting-edge education and industry-proven training methodologies
-          </p>
-        </div>
 
         {/* Adaptive Statistics Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-7xl mx-auto">
@@ -175,50 +157,6 @@ const IntelectStatistics = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Adaptive Bottom CTA */}
-        <div className="text-center mt-12 sm:mt-16 md:mt-20">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 bg-gradient-to-r from-white to-blue-50/50 backdrop-blur-sm border border-blue-200/50 rounded-2xl sm:rounded-3xl px-6 py-6 sm:px-8 sm:py-7 md:px-10 md:py-8 shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 hover:scale-105 mx-2 sm:mx-0">
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="relative">
-                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full animate-ping absolute"></div>
-                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full relative"></div>
-              </div>
-              <span className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent text-center sm:text-left">
-                Ready to transform your career?
-              </span>
-            </div>
-            <button className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden text-sm sm:text-base">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <span className="relative flex items-center gap-2 sm:gap-3 whitespace-nowrap">
-                Start Learning Now
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </button>
-          </div>
-
-          {/* Adaptive Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 mt-8 sm:mt-10 md:mt-12 text-xs sm:text-sm">
-            {[
-              { label: 'Industry Curriculum', icon: '📚', fullLabel: 'Industry-Relevant Curriculum' },
-              { label: 'Expert Instructors', icon: '👨‍🏫', fullLabel: 'Expert Instructors' },
-              { label: 'Career Support', icon: '💼', fullLabel: 'Career Support' },
-              { label: 'Flexible Learning', icon: '⏰', fullLabel: 'Flexible Learning' }
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl border border-gray-200/50 hover:border-blue-200 transition-all duration-300 hover:scale-105">
-                <span className="text-base sm:text-lg">{item.icon}</span>
-                <span className="text-gray-600 font-medium hidden sm:inline">
-                  {item.fullLabel}
-                </span>
-                <span className="text-gray-600 font-medium sm:hidden">
-                  {item.label}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

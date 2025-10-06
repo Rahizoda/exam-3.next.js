@@ -68,12 +68,12 @@ const Navbar = () => {
           : 'dark:bg-[#06062b] bg-white shadow-lg py-5'
         }
       `}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="container w-full mx-auto px-4 sm:px-6 lg:px-4">
+          <div className="flex w-full items-center justify-between">
 
             {/* Logo Section */}
             <div
-              className="flex items-center gap-3 group cursor-pointer transition-all duration-300 hover:scale-105"
+              className="flex items-center gap-3 md:ml-[-90px] group cursor-pointer transition-all duration-300 hover:scale-105"
               onClick={() => handleNavClick('/', 'home')}
             >
               <div className="relative">

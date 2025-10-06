@@ -12,12 +12,12 @@ import { Button } from "@mui/material";
 
 const images = [
   {
-    image: '/image copy 2.png',
+    image: '/image copy (2).png',
     title: 'Speak Fluently, Connect Globally',
     text: 'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
   },
   {
-    image: '/image copy 3.png',
+    image: '/image copy (3).png',
     title: 'Speak Fluently, Connect Globally',
     text: 'Users create personal profiles and connect with others, forming networks based on mutual interests, relationships, or affiliations.'
   },
@@ -56,7 +56,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-[95%] mt-[100px] mx-auto" aria-label="Main services introduction">
+    <section className="relative w-[95%] mt-[60px] md:mt-[100px] mx-auto" aria-label="Main services introduction">
       <div className="flex-1 relative xl:-mt-20 sm:-mt-0">
         <Swiper
           spaceBetween={0}
@@ -71,7 +71,7 @@ const HeroSection = () => {
           effect="fade"
           fadeEffect={{ crossFade: true }}
           speed={1500}
-          modules={[Autoplay, Pagination, EffectFade]}
+          modules={[Autoplay, EffectFade]}
           className="mySwiper h-[60vh] rounded-3xl sm:h-[70vh] md:h-[80vh] lg:h-[85vh] xl:h-[95vh] w-full relative overflow-hidden"
           aria-label="Services slider"
         >
