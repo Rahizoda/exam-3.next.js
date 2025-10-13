@@ -555,9 +555,11 @@ const LanguageLanding = () => {
 
       <Section3 />
 
-      <div className="scroll-container w-[500px] m-auto pb-[50px]">
-        <div className="scroll-content  text-6xl text-blue-600 font-bold">
-          german + spanish + italian + chines + france + america + poland + german + spanish + italian + german + spanish + italian + german + spanish + italian + german + spanish + italian + german + spanish + italian + chines + france + america + poland +
+      <div className="scroll-container w-full max-w-6xl mx-auto py-12 pb-[70px] overflow-hidden">
+        <div className="scroll-content text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-scroll whitespace-nowrap">
+          German • Spanish • Italian • Chinese • French • English • Polish •
+          German • Spanish • Italian • Chinese • French • English • Polish •
+          German • Spanish • Italian • Chinese • French • English • Polish •
         </div>
       </div>
 
