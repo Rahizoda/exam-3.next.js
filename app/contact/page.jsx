@@ -2,164 +2,250 @@
 import { useRouter } from 'next/navigation';
 import React, { useRef, useState } from 'react';
 import EastIcon from '@mui/icons-material/East';
-import { Facebook, LinkedIn, Instagram } from '@mui/icons-material';
+import { Facebook, LinkedIn, Instagram, VolumeOff, VolumeUp } from '@mui/icons-material';
 import { IconButton, Stack } from '@mui/material';
-import ContactFormDarkMode from '../component/carta';
-import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import {
+  Email,
+  LocationOn,
+  Phone,
+  Share
+} from "@mui/icons-material";
+import ContactForm from '../component/message';
 
 const page = () => {
   const videoRef = useRef(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-  const router = useRouter();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
 
-  const toggleVideoPlayback = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play().catch(error => {
-          console.error("Video play failed:", error);
-        });
-      }
-      setIsVideoPlaying(!isVideoPlaying);
+  const togglePlay = () => {
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
     }
+    setIsPlaying(!isPlaying);
   };
 
   const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
+    setIsMuted(!isMuted);
+    videoRef.current.muted = !isMuted;
   };
 
-  const handleVideoClick = () => {
-    toggleVideoPlayback();
-  };
+
 
   return (
-    <div className="pt-[100px] bg-accent dark:bg-[#050524] transition-colors duration-500">
+    <div className="pt-[80px] bg-gradient-to-br from-white to-blue-50 dark:from-[#050524] dark:to-[#0a0a3a] transition-all duration-500 min-h-screen">
 
-      {/* Header */}
-      <div className="flex flex-col bg-[#caebfd] dark:bg-[#070727] justify-center p-[50px_0px] items-center gap-10 shadow-inner">
-        <h1 className="text-blue-700 text-[70px] font-extrabold drop-shadow-md">Contact</h1>
-        <p className="text-gray-700 dark:text-gray-300 flex items-center gap-2">
-          <span onClick={() => router.push("/")} className="cursor-pointer hover:underline hover:text-blue-600 transition-all duration-300">Home</span>
-          <EastIcon />
-          <span className="cursor-pointer underline text-blue-600">Contact</span>
-        </p>
-      </div>
-
-      {/* Intro Section */}
-      <div className="p-10 text-center lg:text-left">
-        <p className="text-blue-800 dark:text-blue-400 uppercase font-semibold tracking-widest">our contacts</p>
-        <h1 className="text-[50px] font-bold mt-4 text-gray-900 dark:text-white leading-tight">
-          Start Your Language <br />
-          Journey with Us
-        </h1>
-        <button
-          onClick={() => router.push("/courses")}
-          className="group flex items-center justify-start w-11 h-11 bg-blue-600 rounded-lg cursor-pointer relative overflow-hidden transition-all duration-300 shadow-lg hover:w-[250px] hover:rounded-xl active:translate-x-1 active:translate-y-1 mt-6 mx-auto lg:mx-0"
-        >
-          <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
-            <EastIcon sx={{ color: "white" }} />
-          </div>
-          <div className="absolute right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-            Check Your Level
-          </div>
-        </button>
-      </div>
-
-      {/* Contact + Video Section */}
-      <div className="flex flex-col lg:flex-row justify-between items-center px-6 lg:px-16 py-20 gap-14 bg-gradient-to-b from-[#f0f8ff] via-[#eaf3ff] to-[#f8fbff] dark:from-[#0a0a1a] dark:via-[#0d0d24] dark:to-[#050524] transition-colors duration-500">
-
-        {/* Contact Info */}
-        <section className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-blue-100 dark:border-blue-800 text-gray-800 dark:text-gray-100 py-10 px-8 w-full lg:w-[40%] transition-all duration-500 hover:shadow-blue-200/50 dark:hover:shadow-blue-900/50">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <p className="text-lg leading-relaxed">
-              Get in touch to discuss your employee wellbeing needs today. <br />
-              Please give us a call, drop us an email.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-blue-600 font-semibold mb-2">ADDRESS:</h3>
-                <p>Маҳаллаҳои 82, 92, 93, 101, 102 <br /> Душанбе, Тоҷикистон</p>
-              </div>
-              <div>
-                <h3 className="text-blue-600 font-semibold mb-2">PHONE:</h3>
-                <p>+992 551 16 16 16</p>
-                <p>+992 555 66 16 66</p>
-              </div>
-              <div>
-                <h3 className="text-blue-600 font-semibold mb-2">MAIL US:</h3>
-                <p>intellect.tj@mail.com</p>
-              </div>
-              <div>
-                <h3 className="text-blue-600 font-semibold mb-2">IN SOCIALS:</h3>
-                <Stack direction="row" spacing={2}>
-                  <IconButton color="primary" aria-label="Facebook" className="hover:scale-110 transition-all">
-                    <Facebook />
-                  </IconButton>
-                  <IconButton color="primary" aria-label="LinkedIn" className="hover:scale-110 transition-all">
-                    <LinkedIn />
-                  </IconButton>
-                  <IconButton color="primary" aria-label="Instagram" className="hover:scale-110 transition-all">
-                    <Instagram />
-                  </IconButton>
-                </Stack>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Video Section */}
-        <div className="w-full lg:w-[55%] relative group flex justify-center items-center">
-          <video
-            ref={videoRef}
-            src="/video_2025-10-01_09-57-15()3.mp4"
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
-            onClick={handleVideoClick}
-            className="w-[700px] max-w-full h-[400px] object-cover rounded-2xl shadow-2xl border border-blue-200 dark:border-blue-800 cursor-pointer transition-transform duration-500 group-hover:scale-[1.03] group-hover:shadow-blue-300/30 dark:group-hover:shadow-blue-900/30"
-            poster="/video-poster.jpg"
-          />
-
-          {/* Overlay Controls */}
-          <div className="absolute bottom-6 left-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-            <button
-              onClick={toggleVideoPlayback}
-              className="p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-white/40 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:scale-110"
-              aria-label={isVideoPlaying ? "Пауза" : "Воспроизвести"}
+      {/* Header Section */}
+      <div className="relative bg-gradient-to-r bg-blue-50 dark:from-[#070727] dark:via-[#0a0a3a] dark:to-[#050524] py-20 lg:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-5xl lg:text-7xl font-black text-blue-600 mb-6 drop-shadow-2xl">
+            Contact <span className="text-blue-600">Us</span>
+          </h1>
+          <div className="flex items-center justify-center gap-3  text-lg">
+            <span
+              onClick={() => router.push("/")}
+              className="cursor-pointer hover:text-blue-600 transition-all duration-300 flex items-center gap-2"
             >
-              {isVideoPlaying ? <Pause className="w-5 h-5 text-gray-900 dark:text-gray-100" /> : <Play className="w-5 h-5 text-gray-900 dark:text-gray-100" />}
-            </button>
-
-            <button
-              onClick={toggleMute}
-              className="p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-white/40 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:scale-110"
-              aria-label={isMuted ? "Включить звук" : "Выключить звук"}
-            >
-              {isMuted ? <VolumeX className="w-5 h-5 text-gray-900 dark:text-gray-100" /> : <Volume2 className="w-5 h-5 text-gray-900 dark:text-gray-100" />}
-            </button>
-          </div>
-
-          {/* Video Overlay Glow */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
-
-          {/* Mobile Status */}
-          <div className="lg:hidden absolute bottom-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs">
-            {isVideoPlaying ? '▶️ Воспроизводится' : '⏸️ На паузе'}
+              Home
+            </span>
+            <EastIcon className="" />
+            <span className="text-blue-600 font-semibold underline decoration-2">Contact</span>
           </div>
         </div>
       </div>
 
-      {/* Contact Form */}
-      <div className="px-4 lg:px-16 pb-20">
-        <ContactFormDarkMode />
+      {/* Intro Section */}
+      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20 text-center lg:text-left">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-blue-600 dark:text-blue-400 uppercase font-bold tracking-widest text-sm mb-4">Get In Touch</p>
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-6">
+              Start Your Language <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Journey Today</span>
+            </h1>
+            <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-2xl">
+              Ready to unlock new opportunities? Contact us now and let's begin your language learning adventure together.
+            </p>
+          </div>
+
+          <div className="flex justify-center lg:justify-end">
+            <button
+              onClick={() => router.push("/courses")}
+              className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:-translate-y-1 active:translate-y-0"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-lg">Check Your Level</span>
+                <EastIcon className="group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
+              <div className="absolute inset-0 rounded-2xl bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </button>
+          </div>
+        </div>
       </div>
+
+      {/* Contact + Video Section */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12 lg:py-20">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-4">Contact Information</h2>
+          <p className="text-gray-600 dark:text-gray-300 text-lg">
+            Reach out to us - we're here to help you succeed in your language journey
+          </p>
+        </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+          {/* Contact Info Card */}
+          <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 p-8 lg:p-10 transition-all duration-500 hover:shadow-blue-500/10 dark:hover:shadow-blue-900/20">
+
+
+            <div className="space-y-8">
+              {/* Address */}
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 transition-all duration-300 hover:bg-blue-100 dark:hover:bg-blue-900/30">
+                <div className="bg-blue-500 p-3 rounded-xl">
+                  <LocationOn className="text-white w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1">Our Address</h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Маҳаллаҳои 82, 92, 93, 101, 102<br />
+                    Душанбе, Тоҷикистон
+                  </p>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 transition-all duration-300 hover:bg-green-100 dark:hover:bg-green-900/30">
+                <div className="bg-green-500 p-3 rounded-xl">
+                  <Phone className="text-white w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1">Phone Numbers</h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    +992 551 16 16 16<br />
+                    +992 555 66 16 66
+                  </p>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-900/30">
+                <div className="bg-purple-500 p-3 rounded-xl">
+                  <Email className="text-white w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1">Email Address</h3>
+                  <p className="text-gray-600 dark:text-gray-300">intellect.tj@mail.com</p>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-orange-50 dark:bg-orange-900/20 transition-all duration-300 hover:bg-orange-100 dark:hover:bg-orange-900/30">
+                <div className="bg-orange-500 p-3 rounded-xl">
+                  <Share className="text-white w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-3">Follow Us</h3>
+                  <div className="flex gap-3">
+                    {[
+                      { icon: Facebook, color: "bg-blue-500 hover:bg-blue-600", label: "Facebook" },
+                      { icon: LinkedIn, color: "bg-blue-700 hover:bg-blue-800", label: "LinkedIn" },
+                      { icon: Instagram, color: "bg-pink-500 hover:bg-pink-600", label: "Instagram" }
+                    ].map((social, index) => (
+                      <IconButton
+                        key={index}
+                        className={`${social.color} text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12`}
+                        aria-label={social.label}
+                      >
+                        <social.icon className="w-5 h-5" />
+                      </IconButton>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Video Section */}
+          <div className="relative w-full h-[80vh] rounded-2xl overflow-hidden shadow-xl bg-black">
+            {/* Видео */}
+            <video
+              ref={videoRef}
+              src="/video_4.mp4"
+              poster="/video-poster.jpg"
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+
+            {/* Play / Pause Button */}
+            <button
+              onClick={togglePlay}
+              className="absolute inset-0 flex items-center justify-center transition-all duration-500"
+            >
+              <div
+                className={`bg-black/40 backdrop-blur-md rounded-full p-3 transition-all duration-500 ${isPlaying
+                    ? "opacity-0 scale-50"
+                    : "opacity-100 scale-100"
+                  }`}
+              >
+                <Play className="w-8 h-8 text-white" />
+              </div>
+            </button>
+
+            {/* Mute / Unmute Button */}
+            <button
+              onClick={toggleMute}
+              className="absolute top-4 right-4 bg-black/40 hover:bg-black/60 backdrop-blur-md p-2 rounded-full transition-all duration-300"
+              aria-label={isMuted ? "Unmute" : "Mute"}
+            >
+              {isMuted ? (
+                <VolumeX className="w-5 h-5 text-white" />
+              ) : (
+                <Volume2 className="w-5 h-5 text-white" />
+              )}
+            </button>
+
+
+          </div>
+        </div>
+
+         {/* Google Map */}
+          <div className="mt-12">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.123456789!2d68.7812345!3d38.5601234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b599f1a0c09c0f%3A0xabcdef123456789!2sINTELLECT!5e0!3m2!1sen!2s!4v1695814234567!5m2!1sen!2s"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-2xl h-[80vh] shadow-lg"
+            />
+
+          </div>
+      </div>
+
+      {/* Contact Form Section */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12 lg:py-20">
+        <div className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 rounded-3xl shadow-2xl p-8 lg:p-12 border border-gray-200 dark:border-gray-800">
+
+          {/* Сарлавҳа */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-4">
+              Send Us a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Message</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
+          </div>
+
+          <ContactForm/>
+
+        </div>
+      </div>
+
     </div>
   );
 };
