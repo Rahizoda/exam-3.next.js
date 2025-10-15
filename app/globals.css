@@ -20,6 +20,36 @@
   }
 }
 
+/* Добавьте в ваш глобальный CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Плавные анимации */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Кастомный скролл */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 @keyframes float {
 
   0%,
