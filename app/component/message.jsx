@@ -42,15 +42,7 @@ export default function ContactForm() {
     <div className="max-w-4xl mx-auto">
       <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
 
-        {/* Form Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-            Паём фиристед
-          </h2>
-          <p className="text-blue-100 text-lg">
-            Саволҳо ё пешниҳодҳои худро ба мо бифиристед
-          </p>
-        </div>
+
 
         {/* Form Content */}
         <div className="p-8 lg:p-12">
@@ -73,7 +65,7 @@ export default function ContactForm() {
               <div className="group">
                 <label className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-semibold mb-3 text-lg">
                   <Person className="w-5 h-5 text-blue-600" />
-                  Номи пурра
+                  Your name
                 </label>
                 <div className="relative">
                   <input
@@ -83,7 +75,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                     className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                    placeholder="Номи худро ворид кунед"
+                    placeholder="Enter your name"
                   />
                 </div>
               </div>
@@ -114,7 +106,7 @@ export default function ContactForm() {
                 <div className="group">
                   <label className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-semibold mb-3 text-lg">
                     <Phone className="w-5 h-5 text-blue-600" />
-                    Рақами телефон
+                    Your phone number
                   </label>
                   <div className="relative">
                     <input
@@ -133,7 +125,7 @@ export default function ContactForm() {
               <div className="group">
                 <label className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-semibold mb-3 text-lg">
                   <Message className="w-5 h-5 text-blue-600" />
-                  Матни паём
+                  Description
                 </label>
                 <div className="relative">
                   <textarea
@@ -143,7 +135,7 @@ export default function ContactForm() {
                     required
                     rows={6}
                     className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none"
-                    placeholder="Матни паёми худро дар инҷо нависед..."
+                    placeholder="Your description..."
                   />
                 </div>
               </div>
@@ -158,12 +150,12 @@ export default function ContactForm() {
                   {isLoading ? (
                     <>
                       <CircularProgress size={24} className="text-white" />
-                      <span>Интизор шавед...</span>
+                      <span>Loading...</span>
                     </>
                   ) : (
                     <>
                       <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-                      <span>Фиристодани паём</span>
+                      <span>Send Message</span>
                     </>
                   )}
                 </button>
@@ -172,12 +164,7 @@ export default function ContactForm() {
           )}
         </div>
 
-        {/* Form Footer */}
-        <div className="bg-gray-50 dark:bg-gray-800 px-8 py-6 text-center border-t border-gray-200 dark:border-gray-700">
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
-            Паёми шумо ба таври бехатар нигоҳ дошта мешавад
-          </p>
-        </div>
+       
       </div>
     </div>
   );
